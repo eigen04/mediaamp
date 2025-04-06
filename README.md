@@ -3,7 +3,7 @@
 MediaAmp (formerly GameHub) is a **fully responsive front-end web application** that allows users to explore, filter, and bookmark video games using the [RAWG Video Games Database API](https://rawg.io/apidocs). This project was built as part of a **Front-End Developer Recruitment Test**, following specific technology and functionality requirements.
 
 ## 🌐 Live Demo
-gamehub-mauve.vercel.app
+[gamehub-mauve.vercel.app](https://gamehub-mauve.vercel.app/)
 
 ## 📌 Project Overview
 
@@ -101,9 +101,6 @@ Candidates were required to build a React-based application adhering to the foll
 
 ## 🚀 Getting Started
 
-Clone the repository and run the app locally:
-
-```bash
 git clone https://github.com/your-username/mediaamp.git
 cd mediaamp
 npm install
