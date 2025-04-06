@@ -1,4 +1,3 @@
-/* components/GameGrid.css */
 .game-grid {
   padding: 80px 20px;
   background-color: #121212;
@@ -163,7 +162,6 @@
   color: #aaa;
 }
 
-/* Bootstrap responsive classes */
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -172,14 +170,12 @@
   margin-left: auto;
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .games-container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* Large devices (desktops, 992px to 1199px) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .games-container {
     grid-template-columns: repeat(4, 1fr);
@@ -187,7 +183,6 @@
   }
 }
 
-/* Medium devices (tablets, 768px to 991px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .games-container {
     grid-template-columns: repeat(3, 1fr);
@@ -199,11 +194,14 @@
   }
 }
 
-/* Small devices (landscape phones, 576px to 767px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .game-grid {
+    padding-top: 100px;
+    padding-left:110px;
+  }
   .games-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 25px;
   }
   
   .section-title {
@@ -220,41 +218,53 @@
   }
 }
 
-/* Extra small devices (phones, less than 576px) */
 @media (max-width: 575.98px) {
   .game-grid {
-    padding: 100px 10px;
+    width: 100%;
+    padding-top: 100px;
+    padding-left:110px;
+    margin: 0 auto;
   }
   
   .games-container {
     grid-template-columns: 1fr;
     gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .section-title {
     font-size: 1.5rem;
+    text-align: center;
   }
   
   .game-grid-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
   }
   
   .games-count {
     margin-top: 15px;
+    text-align: center;
   }
   
   .pagination-controls {
     flex-direction: column;
     gap: 15px;
+    align-items: center;
+    width: 100%;
   }
   
   .pagination-info {
     margin: 10px 0;
     order: -1;
+    text-align: center;
   }
   
   .pagination-button {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
 }

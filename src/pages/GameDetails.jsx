@@ -44,7 +44,6 @@ function GameDetail() {
       }
     } catch (err) {
       console.error('Error fetching screenshots:', err);
-      // We don't set error state here to allow the main game data to still display
     }
   };
 
@@ -82,8 +81,6 @@ function GameDetail() {
       </Badge>
     ));
   };
-
-  // Mock data for price and system requirements since they're not provided by RAWG API
   const mockPrice = () => {
     if (!game) return null;
     if (game.added > 5000) return '$59.99';
@@ -146,7 +143,7 @@ function GameDetail() {
 
   return (
     <div className="game-detail">
-      {/* Hero Section with Background */}
+      {}
       <div className="game-hero" style={{ backgroundImage: `url(${game.background_image})` }}>
         <div className="hero-overlay">
           <div className="container">
@@ -180,7 +177,7 @@ function GameDetail() {
         </div>
       </div>
 
-      {/* Main Content Area */}
+      {}
       <div className="container game-content">
         <div className="game-tabs">
           <Button 

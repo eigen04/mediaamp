@@ -5,8 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-
-// Check if the key is undefined or empty
 if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Publishable Key');
 }

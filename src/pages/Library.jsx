@@ -10,8 +10,6 @@ import './Library.css';
 function Library() {
   const { user } = useUser();
   const dispatch = useDispatch();
-  
-  // Get bookmarked games from Redux store
   const bookmarkedGames = useSelector(state => state.favorites.bookmarkedGames);
   
   const handleRemoveFavorite = (gameId) => {
