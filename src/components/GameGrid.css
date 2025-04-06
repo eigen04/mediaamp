@@ -1,0 +1,260 @@
+/* components/GameGrid.css */
+.game-grid {
+  padding: 80px 20px;
+  background-color: #121212;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  box-shadow: #121212;
+}
+
+.game-grid-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(199, 184, 184, 0.1);
+  padding-bottom: 15px;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;
+  font-size: 2rem;
+  position: relative;
+  padding-left: 8px;
+  margin: 0;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  bottom: -15px;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+  border-radius: 2px;
+}
+
+.games-count {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 6px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+
+.games-count::before {
+  content: '🎮';
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.game-card-wrapper {
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #1e1e1e;
+}
+
+.game-card-wrapper:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.game-card-wrapper > div, 
+.game-card-wrapper > div > div {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.game-card-wrapper img {
+  border-radius: 16px 16px 0 0;
+  transition: transform 0.5s ease;
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.game-card-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pagination-button {
+  background: linear-gradient(to bottom, #4e4e4e, #2e2e2e);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 120px;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: linear-gradient(to bottom, #ff6b6b, #ff8e53);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pagination-button:disabled {
+  background: #2a2a2a;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagination-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.pagination-info span {
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.pagination-range {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Bootstrap responsive classes */
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .games-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .games-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .games-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .games-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .game-grid-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .games-count {
+    margin-top: 15px;
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .game-grid {
+    padding: 100px 10px;
+  }
+  
+  .games-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .game-grid-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .games-count {
+    margin-top: 15px;
+  }
+  
+  .pagination-controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .pagination-info {
+    margin: 10px 0;
+    order: -1;
+  }
+  
+  .pagination-button {
+    width: 100%;
+  }
+}

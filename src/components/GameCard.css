@@ -1,0 +1,235 @@
+.game-card {
+  background: #202020;
+  color: #f1f1f1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgb(26, 26, 29);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  background: #121212;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.game-card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+.bookmark-btn {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.bookmark-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.bookmark-btn.active {
+  color: #ffc107;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.game-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.star-icon {
+  color: gold;
+}
+
+.metacritic {
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: white;
+}
+
+.metacritic-9, .metacritic-8 {
+  background-color: #28a745;
+}
+
+.metacritic-7, .metacritic-6 {
+  background-color: #ffc107;
+}
+
+.metacritic-5, .metacritic-4, .metacritic-3, .metacritic-2, .metacritic-1, .metacritic-0 {
+  background-color: #dc3545;
+}
+
+.game-categories, .game-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.game-categories .badge {
+  background-color: rgb(167, 180, 193);
+  color: #f8f9fa;
+  border-radius: 18px;
+}
+
+.game-tags .badge {
+  background-color: rgb(167, 180, 193);
+  color: white;
+  border-radius: 12px;
+}
+
+.card-body {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  padding: 15px;
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+  .game-card {
+    height: 400px;
+  }
+  
+  .image-container {
+    height: 200px;
+  }
+  
+  .bookmark-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .game-card {
+    height: 360px;
+  }
+  
+  .image-container {
+    height: 180px;
+  }
+  
+  .bookmark-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .game-card {
+    height: 340px;
+  }
+  
+  .image-container {
+    height: 160px;
+  }
+  
+  .bookmark-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .game-card {
+    height: auto;
+    min-height: 300px;
+    margin-bottom: 15px;
+  }
+  
+  .image-container {
+    height: 150px;
+  }
+  
+  .bookmark-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+  
+  .card-body {
+    padding: 12px;
+  }
+  
+  .card-title {
+    font-size: 0.95rem;
+  }
+  
+  .game-meta {
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  
+  .game-categories .badge,
+  .game-tags .badge {
+    font-size: 0.75rem;
+    padding: 0.25em 0.5em;
+  }
+}
